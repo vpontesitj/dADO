@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
+ 
     @Preview
     @Composable
     fun DiceRollerApp() {
@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
                 .wrapContentSize(Alignment.Center)
         )
     }
-
+ 
     @Composable
     fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         var result by remember { mutableStateOf(1) }
@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
         }
         Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
             Image(painter = painterResource(imageResource), contentDescription = result.toString())
-
+ 
             Button(
                 onClick = { result = (1..6).random() },
             ) {
