@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
         }
     }
  
-    @Preview
+  @Preview
     @Composable
     fun DiceRollerApp() {
         DiceWithButtonAndImage(
@@ -51,7 +51,7 @@ class MainActivity : ComponentActivity() {
                 .wrapContentSize(Alignment.Center)
         )
     }
- 
+
     @Composable
     fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         var result by remember { mutableStateOf(1) }
@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity() {
         }
         Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
             Image(painter = painterResource(imageResource), contentDescription = result.toString())
- 
+
             Button(
                 onClick = { result = (1..6).random() },
             ) {
@@ -75,15 +75,15 @@ class MainActivity : ComponentActivity() {
             OutlinedTextField(
                 value = input,
                 onValueChange = { input = it },
-                label = { Text("Insira um número") }
+                label = { Text("Coloque o número") }
             )
             val str = result.toString()
             if(str == input){
-                val toast = Toast.makeText(getApplicationContext(), "Ganhou :)", Toast.LENGTH_SHORT);
+                val toast = Toast.makeText(getApplicationContext(), "Você venceu", Toast.LENGTH_SHORT);
                 toast.show()
             }
             else{
-                val toast = Toast.makeText(getApplicationContext(), "Perdeu :(", Toast.LENGTH_SHORT);
+                val toast = Toast.makeText(getApplicationContext(), "Você perdeu", Toast.LENGTH_SHORT);
                 toast.show()
             }
         }
